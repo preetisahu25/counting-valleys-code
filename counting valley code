@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int steps;
+    string path;
+
+    cout << "Enter number of steps: ";
+    cin >> steps;
+
+    cout << "Enter path (U for up, D for down): ";
+    cin >> path;
+
+    int level = 0; 
+    int valleys = 0;
+
+    for (char step : path) {
+        if (step == 'U') {
+            level++;
+            if (level == 0) {
+                valleys++;
+            }
+        } else if (step == 'D') {
+            level--;
+        }
+    }
+
+    cout << "Number of valleys: " << valleys << endl;
+
+    return 0;
+}
